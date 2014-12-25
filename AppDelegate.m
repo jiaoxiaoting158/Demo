@@ -10,7 +10,6 @@
  *
  *  @param BOOL hehe
  *
- *  @return kdkdf
  */
 #import "AppDelegate.h"
 
