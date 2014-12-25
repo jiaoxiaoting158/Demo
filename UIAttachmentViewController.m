@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 jiaoxt. All rights reserved.
 //
 
-#import "UICollisionViewController.h"
+#import "UIAttachmentViewController.h"
 
-@interface UICollisionViewController (){
+@interface UIAttachmentViewController (){
     UIImageView *_flowerImageView;
     UIImageView *_dogImgeView;
     UIDynamicAnimator * _animator;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation UICollisionViewController
+@implementation UIAttachmentViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,13 +34,11 @@
     
     _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     
-    _gravity = [[UIGravityBehavior alloc] initWithItems:@[_flowerImageView,_dogImgeView]];
-    [_animator addBehavior:_gravity];
-    
     _collision = [[UICollisionBehavior alloc] initWithItems:@[_flowerImageView,_dogImgeView]];
     _collision.collisionMode = UICollisionBehaviorModeEverything;
     _collision.translatesReferenceBoundsIntoBoundary = YES;
     [_animator addBehavior:_collision];
+    
 }
 
 - (void)didReceiveMemoryWarning {
